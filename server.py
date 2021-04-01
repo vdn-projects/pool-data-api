@@ -7,6 +7,8 @@ import math
 import traceback
 
 class PoolDataServer(BaseHTTPRequestHandler):
+    # pool_data is considered as global variable store the pool_values
+    # Dictionary is selected as store format for quick access O(1) by pool_id on /query
     pool_data = {}
 
     def get_percentile(self, values, percentile):
@@ -23,7 +25,8 @@ class PoolDataServer(BaseHTTPRequestHandler):
     
     def validate_data(self, data, var_type):
         """
-        Validate input data including: pool_id, pool_values and percentile
+        Validate input data including: pool_id, pool_values and percentile. Performance tradeoff once applying this
+        but it would help the api-proccess more reliable.
         """
         if var_type == "pool_values":
             for d in data:
