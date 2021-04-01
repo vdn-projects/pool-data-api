@@ -31,12 +31,12 @@ This project developed to run REST API with two POST endpoints:
         ```
 
 ## Required setup
-Please use python version 3.6 or higher, and ensure below 2 modules are installed.
+Please use python version 3.6 or higher, and ensure below 2 additional modules to be installed (not included in default python package).
 * `requests==2.25.1`
 * `pytest==6.2.2`
 
 ## How to run
-* Run the server: `python server.py`, default host: `http://127.0.0.1:8081`.
+* Run the server: `python server.py`, default host access: `http://127.0.0.1:8081`.
 * Run pytest for the unit test: `pytest test.py`
 
 ## Potential improvement
